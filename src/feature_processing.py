@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from src import config
 from src import word_cloud
+from src import data_split
 
 # Natural Language toolkit
 import nltk
@@ -49,3 +50,6 @@ word_cloud.wordcloudplt(df)
 df["label"] = df["label"].map({0: "No Stress", 1: "Stress"})
 data = df[["text", "label"]]
 print(data.head())
+
+
+data_split.model(df)
