@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from src import config
+from src import word_cloud
 
 # Natural Language toolkit
 import nltk
@@ -39,3 +40,7 @@ def clean(text):
     text=" ".join(text)
     return text
 df["text"] = df["text"].apply(clean)
+
+
+# visualizing a word cloud of the text column
+word_cloud.wordcloudplt(df)
