@@ -44,3 +44,8 @@ df["text"] = df["text"].apply(clean)
 
 # visualizing a word cloud of the text column
 word_cloud.wordcloudplt(df)
+
+# Marking labels with 0(as No Stress) and 1(as Stress)
+df["label"] = df["label"].map({0: "No Stress", 1: "Stress"})
+data = df[["text", "label"]]
+print(data.head())
