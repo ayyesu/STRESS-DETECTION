@@ -16,16 +16,16 @@ stopword=set(stopwords.words('english'))
 import re
 
 df = pd.read_csv(config.DATASET)
-def feature_processing(data: pd.DataFrame):
+# def feature_processing(data: pd.DataFrame):
 
-    print(df.head())
+#     print(df.head())
 
-    # Checking for null values
-    print(df.isnull().sum())
+#     # Checking for null values
+#     print(df.isnull().sum())
 
 
 
-feature_processing(df)
+# feature_processing(df)
 
 def clean(text):
     text = str(text).lower()
@@ -44,12 +44,12 @@ df["text"] = df["text"].apply(clean)
 
 
 # visualizing a word cloud of the text column
-word_cloud.wordcloudplt(df)
+# word_cloud.wordcloudplt(df)
 
 # Marking labels with 0(as No Stress) and 1(as Stress)
 df["label"] = df["label"].map({0: "No Stress", 1: "Stress"})
 data = df[["text", "label"]]
-print(data.head())
+# print(data.head())
 
 
 data_split.model(df)
